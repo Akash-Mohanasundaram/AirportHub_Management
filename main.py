@@ -28,7 +28,7 @@ def getvalue_for_username_password():
     dataBase = mysql.connector.connect(
         host="localhost",
         user="root",
-        passwd="AKash@123",
+        passwd="root",
         database="dbproject_normalized",
         auth_plugin='caching_sha2_password')
     cursorObject = dataBase.cursor()
