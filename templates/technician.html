@@ -1,0 +1,549 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technician</title>
+</head>
+<body>
+    <h1>{{role}}</h1>
+    <h1>{{name}}</h1>
+	<h1>{{passs}}</h1>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://kit.fontawesome.com/e40f1bf022.js"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
+      @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro);
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+      html {
+        scroll-behavior: auto;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        box-sizing: border-box;
+        font-family: "Lato", sans-serif;
+        display: flex;
+        justify-content: center;
+      }
+
+      main {
+        background: #f3f4f6;
+        grid-area: main;
+        overflow-y: auto;
+        width: 100%;
+      }
+
+      .MC {
+        padding: 30px 50px;
+      }
+
+      .MT {
+        /* display: flex; */
+        align-items: center;
+      }
+
+      #logout {
+        color: #ffffff;
+        font-size: 25px;
+        background: #2e4a66;
+        border-radius: 200px 200px 200px 200px;
+        border: 0px solid #000000;
+        padding: 15px;
+        cursor: pointer;
+        float: right;
+        margin-top: -40px;
+      }
+
+      .MT > img {
+        max-height: 100px;
+        object-fit: contain;
+        margin-right: 20px;
+      }
+
+      .MG > h1 {
+        font-size: 24px;
+        color: #2e4a66;
+        margin-bottom: 5px;
+      }
+
+      .MG > p {
+        font-size: 14px;
+        font-weight: 700;
+        color: #a5aaad;
+      }
+
+      .main__cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 30px;
+        margin: 20px 0;
+      }
+
+      .DIV1 {
+        gap: 30px;
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .DIV3 {
+        gap: 30px;
+        margin-top: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .DIV1L {
+        padding: 25px;
+        border-radius: 5px;
+        background: #ffffff;
+        box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+        width: 35%;
+      }
+
+      .DIV1LT {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .DIV1LT > div > h1 {
+        font-size: 24px;
+        color: #2e4a66;
+        margin-bottom: 5px;
+      }
+
+      .DIV1LT > div > p {
+        font-size: 14px;
+        font-weight: 700;
+        color: #a5aaad;
+      }
+
+      .DIV1LT > i {
+        color: #ffffff;
+        font-size: 20px;
+        background: #2e4a66;
+        border-radius: 200px 0px 200px 200px;
+        -moz-border-radius: 200px 0px 200px 200px;
+        -webkit-border-radius: 200px 0px 200px 200px;
+        border: 0px solid #000000;
+        padding: 15px;
+      }
+
+      .CR {
+        height: 100%;
+        width: 65%;
+      }
+
+      .DIV1R {
+        padding: 25px 25px 25px 25px;
+        border-radius: 5px;
+        background: #ffffff;
+        box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+      }
+
+      .DIV1RT {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .DIV1RT > div > h1 {
+        font-size: 24px;
+        color: #2e4a66;
+        margin-bottom: 5px;
+      }
+
+      .DIV1RT > div > p {
+        font-size: 14px;
+        font-weight: 700;
+        color: #a5aaad;
+      }
+
+      .DIV1RT > i {
+        color: #ffffff;
+        font-size: 20px;
+        background: #2e4a66;
+        border-radius: 200px 0px 200px 200px;
+        -moz-border-radius: 200px 0px 200px 200px;
+        -webkit-border-radius: 200px 0px 200px 200px;
+        border: 0px solid #000000;
+        padding: 15px;
+      }
+
+      .DIV1R2 {
+        height: 100%;
+        /* width: 65%; */
+        margin-top: 25px;
+        padding: 25px 25px 25px 25px;
+        border-radius: 5px;
+        background: #ffffff;
+        box-shadow: 5px 5px 13px #ededed, -5px -5px 13px #ffffff;
+        align-self: start;
+      }
+
+      .box {
+        width: 100%;
+      }
+
+      .box ul li {
+        list-style: none;
+        padding: 20px 25px 20px 0px;
+        width: 100%;
+        background: #fff;
+        transition: transform 0.5s;
+        font-size: 18px;
+      }
+
+      .box ul li p {
+        padding-bottom: 10px;
+      }
+
+      .box ul li span {
+        width: 100%;
+        height: 40px;
+        text-align: center;
+        line-height: 25px;
+        background: #2e4a66;
+        color: #fff;
+        display: inline-block;
+        border-radius: 10px;
+        margin-right: 10px;
+        padding-top: 12px;
+        font-size: 18px;
+        font-weight: 400;
+        transform: translateY(-2px);
+      }
+
+      #Add {
+        height: 75px;
+      }
+
+      .btn {
+        display: inline;
+        float: left;
+        width: 130px;
+        height: 50px;
+        border-radius: 25px;
+        border: none;
+        background-color: #2e4a66;
+        font-size: 1.2rem;
+        color: #fff;
+        font-family: "Poppins", sans-serif;
+        text-transform: uppercase;
+        outline: none;
+        cursor: pointer;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        text-decoration: none;
+        margin-top: 20px;
+        margin-left: 15px;
+      }
+
+      .btn:hover {
+        float: left;
+        transition: 0.5s;
+        display: inline;
+        width: 130px;
+        height: 50px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-radius: 25px;
+        border-color: #2e4a66;
+        background-color: #fff;
+        font-size: 1.2rem;
+        color: #2e4a66;
+        font-family: "Poppins", sans-serif;
+        text-transform: uppercase;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      .btn1 {
+        float: left;
+        display: inline;
+        text-align: center;
+        width: 30%;
+        height: 50px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        /* border-radius: 15px; */
+        border: 3px solid #2e4a66;
+        border-color: #2e4a66;
+        background-color: #fff;
+        font-size: 1.2rem;
+        color: #2e4a66;
+        outline: none;
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        margin-top: 20px;
+      }
+
+      ::placeholder {
+        color: #2a4056;
+        opacity: 0.5;
+      }
+
+      :-ms-input-placeholder {
+        color: #2a4056;
+      }
+
+      ::-ms-input-placeholder {
+        color: #2a4056;
+      }
+
+      #NPH {
+        display: block;
+        overflow: auto;
+      }
+
+      #textarea {
+        resize: none;
+        float: left;
+        text-align: center;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border: 3px solid #2e4a66;
+        border-color: #2e4a66;
+        background-color: #fff;
+        font-size: 1.2rem;
+        color: #2e4a66;
+        outline: none;
+        font-family: "Poppins", sans-serif;
+        text-decoration: none;
+        margin-top: 20px;
+        padding: 15px;
+      }
+
+      .table1 {
+        border-collapse: collapse;
+        font-size: 0.9em;
+        border-radius: 5px 5px 0 0;
+        overflow: hidden;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        margin: auto;
+      }
+
+      .table1 thead tr {
+        background-color: #2e4a66;
+        color: #ffffff;
+        text-align: left;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      .table1 th,
+      .table1 td {
+        padding: 12px 15px;
+      }
+
+      .table1 tbody tr {
+        background-color: #f3f3f3;
+      }
+    </style>
+    <title>DB</title>
+  </head>
+
+  <body id="body">
+    <main>
+      <div class="MC">
+        <div class="MT">
+          <div class="MG">
+            <h1>Hello {{Name}}, WELCOME!</h1>
+          </div>
+          <form method="get" action="../">
+            <button type="submit" id="logout">
+              <i class="fa fa-sign-out"></i>
+            </button>
+          </form>
+        </div>
+        <div class="DIV1">
+          <div class="DIV1L">
+            <div class="DIV1LT">
+              <div>
+                <h1>Your Details</h1>
+              </div>
+              <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </div>
+            <div class="box">
+              <ul>
+                <li>
+                  <p>Name</p>
+                  <span>{{Name}}</span>
+                </li>
+                <li>
+                  <p>Phone Number</p>
+                  <span>{{phone}}</span>
+                </li>
+                <li>
+                  <p>Address</p>
+                  <span id="Add">
+                    <span id="Add">
+                      <p>{{address_line_1}}</p>
+                      <p>{{address_line_2}}</p>
+                    </span>
+                    <!-- <p>{address line 2}</p></span -->
+
+                </li>
+                <li>
+                  <p>Designation</p>
+                  <span>{{department}}</span>
+                </li>
+                <li>
+                  <p>Union Name</p>
+                  <span>{{union_name}}</span>
+                </li>
+                <li>
+                  <p>Union Membership Number</p>
+                  <span>{{union_mem_no}}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="CR">
+            <div class="DIV1R">
+              <div class="DIV1RT">
+                <div>
+                  <h1>Update your details</h1>
+                </div>
+                <i class="fa fa-gear" aria-hidden="true"></i>
+              </div>
+              <form method="post" name="updateform">
+                <div id="UpdatePH" style="padding: 25px">
+                  <div id="NPH">
+                    <h3>ENTER YOUR NEW PHONE NUMBER</h3>
+                    <label for="phn"></label>
+                    <input
+                      type="text"
+                      class="btn1"
+                      name="phn"
+                      placeholder="+XX XXX-XXX-XXXX"
+                    />
+                    <input type="submit" class="btn" value="Update" />
+                  </div>
+                  <div id="NPH" style="margin-top: 35px">
+                    <h3>ENTER YOUR NEW ADDRESS</h3>
+                    <label for="addr"></label>
+                    <textarea
+                      placeholder="Street Details & Apartment Details&#x0a; City, State, and ZipCode"
+                      id="textarea"
+                      rows="2"
+                      cols="60"
+                      name="addr"
+                    ></textarea>
+                    <!-- <input type="textarea" name="seq" > -->
+                    <input type="submit" class="btn" value="Update" />
+                  </div>
+                  <div id="NPH" style="margin-top: 35px">
+                    <h3>ENTER YOUR NEW PASSWORD</h3>
+                    <label for="pwd"></label>
+                    <input
+                      type="password"
+                      class="btn1"
+                      name="pwd"
+                      placeholder="XXXXXXXXXXXX"
+                    />
+                    <input type="submit" class="btn" value="Update" />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="DIV1R2">
+              <div class="DIV1RT">
+                <div>
+                  <h1>Most recent test details</h1>
+                </div>
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+              </div>
+              <table class="table1">
+                <thead>
+                  <tr>
+                    <td>Test Date</td>
+                    <td>No. of hours worked</td>
+                    <td>Score</td>
+                    <td>Maximum score</td>
+                    <td>Airplane Reg.No</td>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for i in li %}
+                  <tr>
+                    <td>{{i[1]}}</td>
+                    <td>{{i[2]}} hours</td>
+                    <td>{{i[4]}}</td>
+                    <td>{{i[5]}}</td>
+                    <td>{{i[7]}}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="DIV3">
+          <div class="DIV1R2" style="width: 100%;">
+            <div class="DIV1RT">
+              <div>
+                <h1>All Tests' Details</h1>
+              </div>
+              <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </div>
+            <table class="table1">
+              <thead>
+                <tr>                
+                  <td>Technician_Name</td>
+                  <td>Test Date</td>
+                  <td>No. of hours worked</td>
+                  <td>Score</td>
+                  <td>Maximum score</td>
+                  <td>Airplane Reg.No</td>
+                </tr>
+              </thead>
+              <tbody>
+                {% for i in all_test_li %}
+                <tr>
+                  <td>{{i[0]}}</td>
+                  <td>{{i[1]}}</td>
+                  <td>{{i[2]}} hours</td>
+                  <td>{{i[3]}} </td>
+                  <td>{{i[4]}}</td>
+                  <td>{{i[5]}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
