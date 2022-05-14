@@ -69,7 +69,7 @@ def FAA(username):
     dataBase = mysql.connector.connect(
         host="localhost",
         user="root",
-        passwd="AKash@123",
+        passwd="root",
         database="dbproject_normalized",
         auth_plugin='caching_sha2_password')
     cursorObject = dataBase.cursor()
@@ -195,7 +195,7 @@ def Technician(username):
     dataBase = mysql.connector.connect(
         host="localhost",
         user="root",
-        passwd="AKash@123",
+        passwd="root",
         database="dbproject_normalized",
         auth_plugin='caching_sha2_password')
     cursorObject = dataBase.cursor()
@@ -303,7 +303,7 @@ def Admin(username):
     dataBase = mysql.connector.connect(
         host="localhost",
         user="root",
-        passwd="AKash@123",
+        passwd="root",
         database="dbproject_normalized",
         auth_plugin='caching_sha2_password')
     cursorObject = dataBase.cursor()
@@ -492,7 +492,7 @@ def Traffic_Controller(username):
     dataBase = mysql.connector.connect(
         host="localhost",
         user="root",
-        passwd="AKash@123",
+        passwd="root",
         database="dbproject_normalized",
         auth_plugin='caching_sha2_password')
     cursorObject = dataBase.cursor()
@@ -593,7 +593,7 @@ def admin_testdetails(username):
     dataBase = mysql.connector.connect(
         host="localhost",
         user="root",
-        passwd="AKash@123",
+        passwd="root",
         database="dbproject_normalized",
         auth_plugin='caching_sha2_password')
     cursorObject = dataBase.cursor()
@@ -613,7 +613,7 @@ def admin_approve_faa(username, faa, ssn, date, hours, score, regno):
     dataBase = mysql.connector.connect(
         host="localhost",
         user="root",
-        passwd="AKash@123",
+        passwd="root",
         database="dbproject_normalized",
         auth_plugin='caching_sha2_password')
     cursorObject = dataBase.cursor()
